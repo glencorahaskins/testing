@@ -9,7 +9,7 @@ class MountainPlainsIframe extends HTMLElement {
     }
 
     async loadContent() {
-        const url = 'https://raw.githubusercontent.com/glencorahaskins/testing/main/mountain_plains_bbbrc_map_contained.html';
+        const url = 'https://glencorahaskins.github.io/testing/mountain_plains_bbbrc_map_contained.html';
         try {
             const response = await fetch(url);
             if (!response.ok) {
