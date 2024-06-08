@@ -8,6 +8,10 @@ class MountainPlainsIframe extends HTMLElement {
                 width: 100%;
                 height: 100%;
             }
+            #content-container {
+                width: 100%;
+                height: 100%;
+            }
         </style>`;
     }
 
@@ -16,7 +20,7 @@ class MountainPlainsIframe extends HTMLElement {
     }
 
     loadContent() {
-        fetch('https://glencorahaskins.github.io/bbb/mountain_plains_iframe.html')
+        fetch('https://glencorahaskins.github.io/testing/mountain_plains_bbbrc_map_contained.html')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Failed to fetch HTML');
@@ -24,8 +28,13 @@ class MountainPlainsIframe extends HTMLElement {
                 return response.text();
             })
             .then(html => {
-                // Inject the HTML into the Shadow DOM
-                this.shadowRoot.innerHTML = html;
+                // Create a container element
+                const container = document.createElement('div');
+                container.id = 'content-container';
+                container.innerHTML = html;
+                
+                // Append the container to the Shadow DOM
+                this.shadowRoot.appendChild(container);
             })
             .catch(error => {
                 console.error('Error fetching HTML:', error);
