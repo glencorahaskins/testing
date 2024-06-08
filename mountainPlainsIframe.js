@@ -8,11 +8,6 @@ class MountainPlainsIframe extends HTMLElement {
                 width: 100%;
                 height: 100%;
             }
-            iframe {
-                width: 100%;
-                height: 100%;
-                border: none;
-            }
         </style>`;
     }
 
@@ -21,9 +16,20 @@ class MountainPlainsIframe extends HTMLElement {
     }
 
     loadContent() {
-        const iframe = document.createElement('iframe');
-        iframe.src = 'https://glencorahaskins.github.io/testing/mountain_plains_bbbrc_map_contained.html';
-        this.shadowRoot.appendChild(iframe);
+        fetch('https://glencorahaskins.github.io/testing/mountain_plains_bbbrc_map_contained.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to fetch HTML');
+                }
+                return response.text();
+            })
+            .then(html => {
+                // Inject the HTML into the Shadow DOM
+                this.shadowRoot.innerHTML = html;
+            })
+            .catch(error => {
+                console.error('Error fetching HTML:', error);
+            });
     }
 }
 
