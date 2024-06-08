@@ -22,7 +22,7 @@ class MountainPlainsIframe extends HTMLElement {
 
     loadContent() {
         const iframe = document.createElement('iframe');
-        iframe.src = 'https://glencorahaskins.github.io/bbb/mountain_plains_iframe.html';
+        iframe.src = 'https://glencorahaskins.github.io/testing/mountain_plains_bbbrc_map_contained.html';
         this.shadowRoot.appendChild(iframe);
     }
 }
