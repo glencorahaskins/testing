@@ -20,7 +20,7 @@ class MountainPlainsIframe extends HTMLElement {
     }
 
     loadContent() {
-        fetch('https://glencorahaskins.github.io/testing/mountain_plains_bbbrc_map_contained.html')
+        fetch('https://glencorahaskins.github.io/testing/mountain_plains_iframe.html')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Failed to fetch HTML');
