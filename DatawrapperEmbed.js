@@ -40,7 +40,7 @@ class DatawrapperEmbed extends HTMLElement {
             window.datawrapper.render({
                 chart: {
                     id: 'XhkW4',
-                    publicUrl: 'https://datawrapper.dwcdn.net/XhkW4/',
+                    publicUrl: 'https://glencorahaskins.github.io/testing/mountain_plains_bbbrc_map_contained.html/',
                     metadata: {
                         publish: {
                             "embed-height": 409
